@@ -1,0 +1,23 @@
+body {
+  background-color: #fdfdbb;
+}
+
+a {
+  color: #ff0000;
+}
+
+div {
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+span {
+  color: #0000ff;
+}
+
+.footer {
+  text-align: center;
+}

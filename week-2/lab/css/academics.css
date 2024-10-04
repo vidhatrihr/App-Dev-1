@@ -1,0 +1,28 @@
+body {
+  background-color: #fdfdbb;
+}
+
+a {
+  color: #ff0000;
+}
+
+div {
+  margin: 20px;
+}
+
+span {
+  color: #0000ff;
+}
+
+.footer {
+  text-align: center;
+}
+
+th {
+  background-color: #259e3f;
+}
+
+td {
+  color: #ffffff;
+  background-color: #000000;
+}
