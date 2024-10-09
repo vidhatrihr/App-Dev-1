@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Student Id</th>
+    <th>Course Id</th>
+    <th>Marks</th>
+  </tr>
+  {% for student, course, marks in data %}
+  <tr>
+    <td>{{student}}</td>
+    <td>{{course}}</td>
+    <td>{{marks}}</td>
+  </tr>
+  {% endfor %}
+</table>
