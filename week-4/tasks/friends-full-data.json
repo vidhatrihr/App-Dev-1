@@ -1,0 +1,30 @@
+{
+  "vidu": {
+    "place": "hbh",
+    "state": "kar",
+    "age": 21,
+    "weight": 45,
+    "study": "ba+bs"
+  },
+  "muskan": {
+    "place": "raipur",
+    "state": "chg",
+    "age": 21,
+    "weight": 35,
+    "study": "bs"
+  },
+  "vaishnvi": {
+    "place": "hbh",
+    "state": "kar",
+    "age": 14,
+    "weight": 35,
+    "study": "9th"
+  },
+  "cmd": {
+    "place": "albd",
+    "state": "up",
+    "age": 21,
+    "weight": 40,
+    "study": "btech"
+  }
+}
