@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Tracker</title>
+  </head>
+  <body>
+    <h1>Mood Tracker App</h1>
+    <form action="/track" method="post">
+      <label>
+        😄Happy
+        <input type="radio" name="mood" value="happy" />
+      </label>
+
+      <label>
+        😔Sad
+        <input type="radio" name="mood" value="sad" />
+      </label>
+      <input type="submit" value="Track Your Mood" />
+    </form>
+
+    <div>
+      <p>Tracked {{mood_data.happy + mood_data.sad}} times</p>
+      <ul>
+        <li>Happy: {{mood_data.happy}} times</li>
+        <li>Sad: {{mood_data.sad}} times</li>
+      </ul>
+    </div>
+  </body>
+</html>
