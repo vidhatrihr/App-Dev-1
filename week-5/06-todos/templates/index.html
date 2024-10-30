@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todos</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .form-container,
+      .todos-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      form {
+        padding: 20px;
+        border: 5px solid cadetblue;
+        border-radius: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <ul>
+        <li><a href="/?show=all">show all todos</a></li>
+        <li><a href="/?show=done">show done todos</a></li>
+        <li><a href="/?show=pending">show pending todos</a></li>
+      </ul>
+      <form action="/add" method="post">
+        <h2>Add a todo</h2>
+        <input type="text" name="todo_text" />
+        <input type="submit" value="Add todo" />
+      </form>
+    </div>
+    <div class="todos-container">
+      <ul>
+        {% for id, todo_item in todos %}
+        <li>
+          {% if todo_item.status == 'done' %}
+          <span style="text-decoration: line-through">{{ todo_item.text }}</span>
+          {% else %}
+          <span>{{ todo_item.text }}</span>
+          {% endif %}
+
+          <a href="http://localhost:5000/done?todo_id={{id}}">✅</a>
+          <a href="http://localhost:5000/remove?todo_id={{id}}">❌</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
