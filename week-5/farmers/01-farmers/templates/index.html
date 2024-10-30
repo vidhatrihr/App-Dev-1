@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer's app</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Farmer's App</h1>
+    <div class="page-container">
+      <h2>Products' Table</h2>
+      <table border="1">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Type</th>
+        </tr>
+
+        {% for id, product in products.items() %}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.type}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <h2>Stocks Table</h2>
+      <table border="1">
+        <tr>
+          <th>#</th>
+          <th>Product ID</th>
+          <th>Product name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Expiry</th>
+        </tr>
+
+        {% for id, stock in stocks.items() %}
+
+        <tr>
+          <td>{{id}}</td>
+          <td>{{stock.product_id}}</td>
+          <td>{{products[stock.product_id].name}}</td>
+          <td>{{stock.qty}}</td>
+          <td>{{stock.price}}</td>
+          <td>{{stock.expiry}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
