@@ -3,22 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Course</title>
+    <title>Add student</title>
   </head>
   <body>
     <a href="/">Go back</a>
-    <h1>Add a new course</h1>
-    <form action="/add/course" method="post">
+    <h1>Add a new student</h1>
+    <form action="/add/student" method="post">
       <label>
-        Course Name:
+        Name:
         <input type="text" name="name" />
       </label>
 
       <label>
-        Credits:
-        <input type="text" name="credits" />
+        Place:
+        <input type="text" name="place" />
       </label>
-      <input type="submit" value="Add Course" />
+
+      <label>
+        Age:
+        <input type="text" name="age" />
+      </label>
+      <input type="submit" value="Click here" />
     </form>
   </body>
 </html>

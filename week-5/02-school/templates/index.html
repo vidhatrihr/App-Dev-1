@@ -28,6 +28,7 @@
   </head>
   <body>
     <h1>Welcome to School Management App</h1>
+    <p>With persistent storage using SQLite3</p>
 
     <section>
       <h2>List of Students:</h2>
@@ -38,12 +39,12 @@
           <th>Place</th>
           <th>Age</th>
         </tr>
-        {% for id, student in students.items() %}
+        {% for id, name, place, age in students %}
         <tr>
           <td>{{id}}</td>
-          <td>{{student.name}}</td>
-          <td>{{student.place}}</td>
-          <td>{{student.age}}</td>
+          <td>{{name}}</td>
+          <td>{{place}}</td>
+          <td>{{age}}</td>
         </tr>
         {% endfor %}
       </table>
@@ -59,11 +60,11 @@
           <th>Name</th>
           <th>Credits</th>
         </tr>
-        {% for id, course in courses.items() %}
+        {% for id, name, credits in courses %}
         <tr>
           <td>{{id}}</td>
-          <td>{{course.name}}</td>
-          <td>{{course.credits}}</td>
+          <td>{{name}}</td>
+          <td>{{credits}}</td>
         </tr>
         {% endfor %}
       </table>
@@ -81,13 +82,13 @@
           <th>Term</th>
           <th>Year</th>
         </tr>
-        {% for id, enroll in enrolls.items() %}
+        {% for id, student_id, course_id, term, year in enrolls %}
         <tr>
           <td>{{id}}</td>
-          <td>{{enroll.student_id}}</td>
-          <td>{{enroll.course_id}}</td>
-          <td>{{enroll.term}}</td>
-          <td>{{enroll.year}}</td>
+          <td>{{student_id}}</td>
+          <td>{{course_id}}</td>
+          <td>{{term}}</td>
+          <td>{{year}}</td>
         </tr>
         {% endfor %}
       </table>
