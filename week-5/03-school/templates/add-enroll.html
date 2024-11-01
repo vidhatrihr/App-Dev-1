@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a new enroll</title>
+  </head>
+  <body>
+    <a href="/">Go back</a>
+    <h1>Add a new enroll</h1>
+    <form action="/add/enroll" method="post">
+      <label>
+        Student ID:
+        <input type="text" name="student_id" />
+      </label>
+
+      <label>
+        Course ID:
+        <input type="text" name="course_id" />
+      </label>
+
+      <label>
+        term:
+        <input type="text" name="term" />
+      </label>
+
+      <label>
+        year:
+        <input type="text" name="year" />
+      </label>
+      <input type="submit" value="Add Enroll" />
+    </form>
+  </body>
+</html>
