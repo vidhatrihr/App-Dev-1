@@ -6,54 +6,60 @@
     <title>Add Student</title>
   </head>
   <body>
-    <form action="/student/create" method="post" id="create-form">
-      <div>
-        <label>
-          Roll no:
-          <input type="text" name="roll" required />
-        </label>
-      </div>
+    {% if error %}
+    <h1>This roll number already exists.</h1>
+    {% else %}
+    <main>
+      <form action="/student/create" method="post" id="create-form">
+        <div>
+          <label>
+            Roll no:
+            <input type="text" name="roll" required />
+          </label>
+        </div>
 
-      <div>
-        <label>
-          First name:
-          <input type="text" name="f_name" required />
-        </label>
-      </div>
+        <div>
+          <label>
+            First name:
+            <input type="text" name="f_name" required />
+          </label>
+        </div>
 
-      <div>
-        <label>
-          Last name:
-          <input type="text" name="l_name" />
-        </label>
-      </div>
+        <div>
+          <label>
+            Last name:
+            <input type="text" name="l_name" />
+          </label>
+        </div>
 
-      <div>
-        <label>Select Courses</label>
+        <div>
+          <label>Select Courses</label>
 
-        <label>
-          <input type="checkbox" name="courses" value="course_1" />
-          MAD 1
-        </label>
+          <label>
+            <input type="checkbox" name="courses" value="course_1" />
+            MAD 1
+          </label>
 
-        <label>
-          <input type="checkbox" name="courses" value="course_2" />
-          DBMS
-        </label>
+          <label>
+            <input type="checkbox" name="courses" value="course_2" />
+            DBMS
+          </label>
 
-        <label>
-          <input type="checkbox" name="courses" value="course_3" />
-          PDSA
-        </label>
+          <label>
+            <input type="checkbox" name="courses" value="course_3" />
+            PDSA
+          </label>
 
-        <label>
-          <input type="checkbox" name="courses" value="course_4" />
-          BDM
-        </label>
-      </div>
-      <div>
-        <input type="submit" value="Add Student" />
-      </div>
-    </form>
+          <label>
+            <input type="checkbox" name="courses" value="course_4" />
+            BDM
+          </label>
+        </div>
+        <div>
+          <input type="submit" value="Add Student" />
+        </div>
+      </form>
+    </main>
+    {% endif %}
   </body>
 </html>
