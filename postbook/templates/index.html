@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postbook</title>
+    <style>
+        form {
+            display: inline-block;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+
+        form div {
+            padding: 10px;
+        }
+
+        .posts-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .post {
+            max-width: 400px;
+            flex-grow: 1;
+            padding: 10px;
+            border: 2px solid red;
+            border-radius: 5px;
+        }
+    </style>
+  </head>
+  <body>
+    <a href="/logout">logout</a>
+    <h1>Welcome to Postbook</h1>
+    <h2>Post here</h2>
+    <form action="/create-post" method='post'>
+      <div>
+        <label>
+          Post:
+          <input type="text" name='post'>
+        </label>
+      </div>
+      <div>
+        <input type="submit" value='Submit'>
+      </div>
+    </form>
+    <section>
+      <div class='posts-container'>
+        {% for post in posts %}
+          <div class='post'>
+            <p>{{ post.user.name }}</p>
+            <p>{{ post.body }}</p>
+
+            {% if check_if_liked(post) %}
+              <a href="/unlike/{{ post.id }}">Unlike</a>
+            {% else %}
+              <a href="/like/{{ post.id }}">Like</a>
+            {% endif %}
+            total likes {{ count_likes(post) }}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </body>
+</html>
